@@ -4,6 +4,15 @@
 All notable changes to this project are documented in this file.
 
 
+<a name="v0.1.3"></a>
+## [v0.1.3] - 2025-04-18
+### Code Refactoring
+- remove steps for copying and uploading versioned changelog to GitHub Release
+
+### New Features
+- add step to update GitHub Release Notes with CHANGELOG.md
+
+
 <a name="v0.1.2"></a>
 ## [v0.1.2] - 2025-04-18
 ### Bug Fixes
@@ -58,7 +67,8 @@ All notable changes to this project are documented in this file.
 - add initial configuration and template for changelog generation
 
 
-[Unreleased]: https://github.com/lwijshoff/changelog-test/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/lwijshoff/changelog-test/compare/v0.1.3...HEAD
+[v0.1.3]: https://github.com/lwijshoff/changelog-test/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/lwijshoff/changelog-test/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/lwijshoff/changelog-test/compare/v0.1.0...v0.1.1
 [v0.1.0]: https://github.com/lwijshoff/changelog-test/compare/v0.0.6...v0.1.0
