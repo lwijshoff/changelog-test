@@ -1,0 +1,52 @@
+name: Release with Changelog
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag name (e.g., v1.2.3)'
+        required: true
+      release_name:
+        description: 'Release name (e.g., Stable Release or Beta Preview)'
+        required: true
+      prerelease:
+        description: 'Is this a pre-release?'
+        required: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up git-chglog
+        run: |
+          CHGLOG_VERSION="0.9.1"
+          curl -o git-chglog -L "https://github.com/git-chglog/git-chglog/releases/download/${CHGLOG_VERSION}/git-chglog_linux_amd64"
+          chmod +x git-chglog
+
+      - name: Generate changelog section for tag
+        run: |
+          ./git-chglog "${{ github.event.inputs.tag }}" > changelog.md
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.tag }}
+          name: ${{ github.event.inputs.release_name }}
+          body_path: changelog.md
+          prerelease: ${{ github.event.inputs.prerelease }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cleanup
+        run: rm git-chglog changelog.md
+        if: always()
