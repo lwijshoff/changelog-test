@@ -1,4 +1,6 @@
 # changelog-test
 Testing out generating a changelog
 
-Purely for testing sakes I'll bump to v0.0.2
+Important note for when using github workflows (generates Changelog.md based on a release being created)
+Make sure to toggle these settings as the workflow won't have enough permissions:
+![repository-settings](assets/image.png)
