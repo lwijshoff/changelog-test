@@ -39,19 +39,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Copy versioned changelog
-        if: steps.generate.outputs.changes == 'true'
-        run: cp CHANGELOG.md "CHANGELOG-${{ github.event.release.tag_name }}.md"
-
-      - name: Upload versioned CHANGELOG.md to GitHub Release
-        if: steps.generate.outputs.changes == 'true'
-        uses: softprops/action-gh-release@v1
-        with:
-          files: "CHANGELOG-${{ github.event.release.tag_name }}.md"
-          tag_name: ${{ github.event.release.tag_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Cleanup
         run: rm git-chglog
         if: always()
