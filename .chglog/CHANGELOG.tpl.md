@@ -1,3 +1,7 @@
+# Changelog
+
+All notable changes to this project are documented in this file.
+
 {{ if .Versions -}}
 <a name="unreleased"></a>
 ## [Unreleased]
@@ -11,8 +15,6 @@
 {{ end -}}
 {{ end -}}
 {{ end -}}
-
-All notable changes to this project are documented in this file.
 
 {{ range .Versions }}
 <a name="{{ .Tag.Name }}"></a>
