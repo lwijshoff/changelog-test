@@ -30,7 +30,8 @@ jobs:
         run: |
           rm -f CHANGELOG.md
           ./git-chglog -o CHANGELOG.md
-          if git diff --quiet CHANGELOG.md; then
+          git add CHANGELOG.md
+          if git diff --cached --quiet; then
             echo "changes=false" >> $GITHUB_OUTPUT
           else
             echo "changes=true" >> $GITHUB_OUTPUT
@@ -43,6 +44,7 @@ jobs:
         if: always()
 
       - name: Create Pull Request
+        id: create-pr
         if: steps.generate.outputs.changes == 'true'
         uses: peter-evans/create-pull-request@v4
         with:
