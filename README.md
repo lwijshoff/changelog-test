@@ -54,4 +54,3 @@ To test this setup yourself:
 - [GitHub Actions Docs](https://docs.github.com/en/actions)
 
 _This project is intended for demonstration and experimentation purposes._
-```
