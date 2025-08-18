@@ -6,6 +6,12 @@ All notable changes to this project are documented in this file.
 ## [Unreleased]
 
 
+<a name="v0.2.1"></a>
+## [v0.2.1] - 2025-08-18
+### New Features
+- add os import to foo.py
+
+
 <a name="v0.2.0"></a>
 ## [v0.2.0] - 2025-04-22
 ### New Features
@@ -75,7 +81,8 @@ All notable changes to this project are documented in this file.
 - add initial configuration and template for changelog generation
 
 
-[Unreleased]: https://github.com/lwijshoff/changelog-test/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/lwijshoff/changelog-test/compare/v0.2.1...HEAD
+[v0.2.1]: https://github.com/lwijshoff/changelog-test/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/lwijshoff/changelog-test/compare/v0.1.3...v0.2.0
 [v0.1.3]: https://github.com/lwijshoff/changelog-test/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/lwijshoff/changelog-test/compare/v0.1.1...v0.1.2
